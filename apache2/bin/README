@@ -1,0 +1,4 @@
+A number of scripts for manipulating Apache:
+
+* apache-md5-lookup.py - prg for RewriteMap that returns the first four characters of an MD5Sum for the requested domain
+* createsite.py	       - Python Script to create a basic structure for websites that adheres to the above
