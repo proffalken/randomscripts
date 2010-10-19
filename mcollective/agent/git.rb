@@ -13,9 +13,6 @@ module MCollective
 
             action "pull" do
 		validate :repopath, String
-		
-		retval = ""
-
 		# setup the git repo
 		repo = Repo.new(request[:repopath])
 		reply.data = "Updating #{request[:repopath]}"
@@ -23,6 +20,17 @@ module MCollective
 		reply.data = "Update completed"
                 
             end
+
+	    action "merge" do 
+		validate :branch1, String
+		validate :branch2, String
+		validate :repopath, String
+
+		# setup the repo to be merged
+		repo  = Repo.new(request[:repopath])
+		reply.data = "Merging #{request[:branch1]} into #{request[:branch2]} on repo #{request[:repopath]}"
+		repo.merge([branch1,branch2])
+	    end
         end
     end
 end
