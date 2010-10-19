@@ -6,7 +6,7 @@ import hashlib
 
 while True:
     request = sys.stdin.readline().strip()
-    response = hashlib.md5(request).hexdigest()[:4]
+    response = hashlib.md5(request).hexdigest()[-4:]
     if response:
         sys.stdout.write(response + '\n')
     else:
