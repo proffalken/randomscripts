@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# This script takes a domain name as an argument and creates the relevant site
 # import the relevant libraries
 import sys
 import os
